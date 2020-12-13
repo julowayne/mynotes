@@ -27,7 +27,7 @@
           <div class="col d-flex justify-content-between" style='border-bottom:1px solid #ccc'>
             <div class="mb-1">
               <div>
-                <strong> {{ note.title }} </strong> ({{ note.content.length}} characters) {{ note.date }}
+                <strong> {{ note.title }} </strong> ({{ note.content.length}} words) {{ note.date }}
               </div>
               <div class="mb-1">
                 <div>{{note.content.length > 30 ? note.content.slice(0, 30) + '..' : note.content }}</div>
