@@ -17,7 +17,12 @@
   <div class="row shadow-sm p-0">
     <div class="col-md-5 m-0">
       <div class="row" id="title">
-        <div class="col p-3 shadow-sm text-left name"><span class="mdi mdi-24px mdi-note-multiple"></span><strong> My notes</strong></div>
+        <div class="col p-3 shadow-sm name"><span class="mdi mdi-24px mdi-note-multiple"></span><strong> My notes</strong></div>
+      </div>
+      <div class="row shadow-sm p-1">
+        <button type="button" class="btn p-0 text-rigth" @click.prevent="newNote">
+          <div class="col p-2 name"><span class="mdi mdi-24px mdi-sticker-plus"></span><strong> New note</strong></div>
+          </button>
       </div>
       <div class="overflow-y">
         <div v-if="notes.length"
@@ -126,6 +131,10 @@
   });
 const options = {
   methods: {
+    newNote() {
+      this.noteTitle = ""
+      this.noteContent = ""
+    },
     addNote () {
       if(this.edit == false) {
         const note = {
