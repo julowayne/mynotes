@@ -84,7 +84,7 @@
         <div class="col">
           <div class="form-group">
             <label for="noteTitle" class="name"><span class="mdi mdi-24px mdi-pencil-box-outline"></span> Title</label>
-            <input v-model="noteTitle" type="text" class="form-control shadow-sm" id="noteTitle" placeholder="My title ...">
+            <input v-focus v-model="noteTitle" type="text" class="form-control shadow-sm" id="noteTitle" placeholder="My title ...">
           </div>
         </div>
       </div>
@@ -191,7 +191,16 @@ const options = {
   }
 };
 
-Vue.createApp(options).mount("#app");
+const app = Vue.createApp(options);
+
+
+app
+.directive("focus", {
+    mounted(el){
+        el.focus();
+    }
+})
+.mount('#app');
 </script>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
